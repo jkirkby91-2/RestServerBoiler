@@ -16,19 +16,19 @@ interface ResourceResponseContract
      * @param ResponseInterface $data
      * @return mixed
      */
-    function createdResponse(ResponseInterface  $data);
+    function createdResponse(array $data);
 
     /**
      * @param ResponseInterface $data
      * @return mixed
      */
-    function showResponse(ResponseInterface $data);
+    function showResponse($data);
 
     /**
      * @param ResponseInterface $data
      * @return mixed
      */
-    function listResponse(ResponseInterface $data);
+    function listResponse($data);
 
     /**
      * @return mixed
@@ -44,6 +44,6 @@ interface ResourceResponseContract
      * @param ResponseInterface $data
      * @return mixed
      */
-    function clientErrorResponse(ResponseInterface $data);
+    function clientErrorResponse($data);
 
 }
