@@ -13,22 +13,22 @@ use Psr\Http\Message\ResponseInterface;
 interface ResourceResponseContract
 {
     /**
-     * @param ResponseInterface $data
+     * @param array $data
      * @return mixed
      */
     function createdResponse(array $data);
 
     /**
-     * @param ResponseInterface $data
+     * @param array $data
      * @return mixed
      */
-    function showResponse($data);
+    function showResponse(array $data);
 
     /**
-     * @param ResponseInterface $data
+     * @param array $data
      * @return mixed
      */
-    function listResponse($data);
+    function listResponse(array $data);
 
     /**
      * @return mixed
@@ -41,9 +41,9 @@ interface ResourceResponseContract
     function deletedResponse();
 
     /**
-     * @param ResponseInterface $data
+     * @param array $data
      * @return mixed
      */
-    function clientErrorResponse($data);
+    function clientErrorResponse(array $data);
 
 }
