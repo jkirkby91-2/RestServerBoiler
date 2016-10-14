@@ -16,7 +16,7 @@ interface ResourceControllerContract
     /**
      * @return mixed
      */
-    public function index();
+    public function index(ServerRequestInterface $request);
 
     /**
      * @param $id

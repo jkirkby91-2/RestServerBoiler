@@ -16,19 +16,19 @@ interface ResourceResponseContract
      * @param array $data
      * @return mixed
      */
-    function createdResponse(array $data);
+    function createdResponse($data);
 
     /**
      * @param array $data
      * @return mixed
      */
-    function showResponse(array $data);
+    function showResponse($data);
 
     /**
      * @param array $data
      * @return mixed
      */
-    function listResponse(array $data);
+    function listResponse($data);
 
     /**
      * @return mixed
@@ -41,9 +41,8 @@ interface ResourceResponseContract
     function deletedResponse();
 
     /**
-     * @param array $data
      * @return mixed
      */
-    function clientErrorResponse(array $data);
+    function clientErrorResponse();
 
 }
