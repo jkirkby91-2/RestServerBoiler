@@ -10,7 +10,7 @@ namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions;
  */
 class UnprocessableEntityException extends \Symfony\Component\HttpKernel\Exception\HttpException
 {
-    public function __construct($statusCode = 422, $message = 'UnProcessable Entity Exception', \Exception $previous = null, array $headers = array(), $code = 0)
+    public function __construct( $message = 'UnProcessable Entity Exception', $statusCode = 422, \Exception $previous = null, array $headers = array(), $code = 0)
     {
         parent::__construct($statusCode,$message,$previous);
     }
