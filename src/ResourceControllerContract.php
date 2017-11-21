@@ -1,46 +1,60 @@
 <?php
 
-namespace Jkirkby91\Boilers\RestServerBoiler;
+	namespace Jkirkby91\Boilers\RestServerBoiler;
 
-use Psr\Http\Message\ServerRequestInterface;
+	use Psr\Http\Message\ServerRequestInterface;
+	use Zend\Diactoros\Response\JsonResponse;
 
-/**
- * Interface ResourceControllerContract
- *
- * @package Jkirkby91\LumenRestServerComponent\Contracts
- * @author James Kirkby <jkirkby91@gmail.com>
- */
-interface ResourceControllerContract
-{
+	/**
+	 * Interface ResourceControllerContract
+	 *
+	 * @package Jkirkby91\Boilers\RestServerBoiler
+	 * @author  James Kirkby <jkirkby@protonmail.ch>
+	 */
+	interface ResourceControllerContract
+	{
 
-    /**
-     * @return mixed
-     */
-    public function index(ServerRequestInterface $request);
+		/**
+		 * index()
+		 * @param \Psr\Http\Message\ServerRequestInterface $request
+		 *
+		 * @return \Zend\Diactoros\Response\JsonResponse
+		 */
+		public function index(ServerRequestInterface $request) : JsonResponse;
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function show($id);
+		/**
+		 * show()
+		 * @param \Psr\Http\Message\ServerRequestInterface $request
+		 * @param                                          $id
+		 *
+		 * @return \Zend\Diactoros\Response\JsonResponse
+		 */
+		public function show(ServerRequestInterface $request, $id) : JsonResponse;
 
-    /**
-     * @param ServerRequestInterface $request
-     * @return mixed
-     */
-    public function store(ServerRequestInterface $request);
+		/**
+		 * store()
+		 * @param \Psr\Http\Message\ServerRequestInterface $request
+		 *
+		 * @return \Zend\Diactoros\Response\JsonResponse
+		 */
+		public function store(ServerRequestInterface $request) : JsonResponse;
 
-    /**
-     * @param ServerRequestInterface $request
-     * @param $id
-     * @return mixed
-     */
-    public function update(ServerRequestInterface $request,$id);
+		/**
+		 * update()
+		 * @param \Psr\Http\Message\ServerRequestInterface $request
+		 * @param                                          $id
+		 *
+		 * @return \Zend\Diactoros\Response\JsonResponse
+		 */
+		public function update(ServerRequestInterface $request, $id) : JsonResponse;
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function destroy($id);
+		/**
+		 * destroy()
+		 * @param \Psr\Http\Message\ServerRequestInterface $request
+		 * @param                                          $id
+		 *
+		 * @return \Zend\Diactoros\Response\JsonResponse
+		 */
+		public function destroy(ServerRequestInterface $request, $id) : JsonResponse;
 
-}
+	}
