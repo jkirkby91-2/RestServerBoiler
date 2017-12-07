@@ -1,12 +1,20 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions;
+	namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions {
 
-/**
- * Class ConflictHttpException
- * @package Jkirkby91\LumenRestServerComponent\Exceptions
- */
-class ConflictHttpException extends \Symfony\Component\HttpKernel\Exception\ConflictHttpException
-{
+		use Symfony\{
+			Component\HttpKernel\Exception\ConflictHttpException as SymfonyConflictHttpException
+		};
 
-}
+		/**
+		 * Class ConflictHttpException
+		 *
+		 * @package Jkirkby91\Boilers\RestServerBoiler\Exceptions
+		 * @author  James Kirkby <jkirkby@protonmail.ch>
+		 */
+		class ConflictHttpException extends SymfonyConflictHttpException
+		{
+
+		}
+	}

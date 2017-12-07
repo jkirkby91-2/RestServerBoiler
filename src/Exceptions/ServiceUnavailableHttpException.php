@@ -1,12 +1,20 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions;
+	namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions {
 
-/**
- * Class ServiceUnavailableHttpException
- * @package Jkirkby91\LumenRestServerComponent\Exceptions
- */
-class ServiceUnavailableHttpException extends \Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException
-{
+		use Symfony\{
+			Component\HttpKernel\Exception\ServiceUnavailableHttpException as SymfonyServiceUnavailableHttpException
+		};
 
-}
+		/**
+		 * Class ServiceUnavailableHttpException
+		 *
+		 * @package Jkirkby91\Boilers\RestServerBoiler\Exceptions
+		 * @author  James Kirkby <jkirkby@protonmail.ch>
+		 */
+		class ServiceUnavailableHttpException extends SymfonyServiceUnavailableHttpException
+		{
+
+		}
+	}

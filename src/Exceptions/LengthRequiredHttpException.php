@@ -1,12 +1,20 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions;
+	namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions {
 
-/**
- * Class LengthRequiredHttpException
- * @package Jkirkby91\LumenRestServerComponent\Exceptions
- */
-class LengthRequiredHttpException extends \Symfony\Component\HttpKernel\Exception\LengthRequiredHttpException
-{
+		use Symfony\{
+			Component\HttpKernel\Exception\LengthRequiredHttpException as SymfonyLengthRequiredHttpException
+		};
 
-}
+		/**
+		 * Class LengthRequiredHttpException
+		 *
+		 * @package Jkirkby91\Boilers\RestServerBoiler\Exceptions
+		 * @author  James Kirkby <jkirkby@protonmail.ch>
+		 */
+		class LengthRequiredHttpException extends SymfonyLengthRequiredHttpException
+		{
+
+		}
+	}

@@ -1,15 +1,32 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions;
+	namespace Jkirkby91\Boilers\RestServerBoiler\Exceptions {
 
-/**
- * Class DeleteResourceFailedException
- * @package Jkirkby91\LumenRestServerComponent\Exceptions
- */
-class ResourceFailedException	 extends \Symfony\Component\HttpKernel\Exception\HttpException
-{
-    public function __construct($statusCode = 422, $message = 'Resource Exception', \Exception $previous = null, array $headers = array(), $code = 0)
-    {
-        //
-    }
-}
+		use Symfony\{
+			Component\HttpKernel\Exception\HttpException as SymfonyHttpException
+		};
+
+		/**
+		 * Class ResourceFailedException
+		 *
+		 * @package Jkirkby91\Boilers\RestServerBoiler\Exceptions
+		 * @author  James Kirkby <jkirkby@protonmail.ch>
+		 */
+		class ResourceFailedException extends SymfonyHttpException
+		{
+			/**
+			 * ResourceFailedException constructor.
+			 *
+			 * @param int             $statusCode
+			 * @param string          $message
+			 * @param \Exception|null $previous
+			 * @param array           $headers
+			 * @param int             $code
+			 */
+			public function __Construct(int $statusCode = 422, string $message = 'Resource Exception', \Exception $previous = null, array $headers = [], int $code = 0)
+			{
+				parent::__construct($statusCode, $message, $previous, $headers, $code);
+			}
+		}
+	}
